@@ -5,17 +5,19 @@
 /* line 5, ../sass/app.scss */
 * {
   font-family: 'Alegreya Sans', sans-serif;
+  font-size: 16px;
 }
 
-/* line 8, ../sass/app.scss */
+/* line 9, ../sass/app.scss */
 .todoApp {
   width: 30%;
   margin: 0 auto;
   padding: 20px 10px;
   position: relative;
+  margin-bottom: 50px;
 }
 
-/* line 14, ../sass/app.scss */
+/* line 16, ../sass/app.scss */
 .header {
   font-weight: bold;
   padding: 5px 0px;
@@ -23,21 +25,28 @@
   text-transform: uppercase;
 }
 
-/* line 20, ../sass/app.scss */
+/* line 23, ../sass/app.scss */
+.text-box::before {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 29, ../sass/app.scss */
 ul {
   padding: 0;
 }
 
-/* line 23, ../sass/app.scss */
+/* line 32, ../sass/app.scss */
 .todoApp-item {
   list-style: none;
 }
-/* line 25, ../sass/app.scss */
+/* line 34, ../sass/app.scss */
 .todoApp-item > * {
   margin-right: 10px;
 }
 
-/* line 29, ../sass/app.scss */
+/* line 38, ../sass/app.scss */
 .item-checkbox {
   -ms-transform: scale(1.5);
   /* IE */
@@ -50,54 +59,49 @@ ul {
   margin: 5px;
 }
 
-/* line 36, ../sass/app.scss */
+/* line 45, ../sass/app.scss */
 .item-checkbox:checked + .item-content {
   color: #ccc;
 }
 
-/* line 39, ../sass/app.scss */
-.add-input {
-  float: left;
-}
-
-/* line 43, ../sass/app.scss */
+/* line 49, ../sass/app.scss */
 .todoApp-form::after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 49, ../sass/app.scss */
+/* line 55, ../sass/app.scss */
 .item-content, .edit-input {
   display: inline-block;
   margin-left: 10px;
 }
 
-/* line 53, ../sass/app.scss */
+/* line 59, ../sass/app.scss */
 .iconBtn-group, .input-group {
   display: inline-block;
   width: 50%;
   margin: 0;
 }
 
-/* line 58, ../sass/app.scss */
+/* line 64, ../sass/app.scss */
 .iconBtn-group {
   text-align: right;
 }
 
-/* line 61, ../sass/app.scss */
+/* line 67, ../sass/app.scss */
 .input-group {
   text-align: left;
 }
 
-/* line 64, ../sass/app.scss */
+/* line 70, ../sass/app.scss */
 .action-btn {
   text-align: center;
   display: inline-block;
   width: 33.333%;
 }
 
-/* line 70, ../sass/app.scss */
+/* line 76, ../sass/app.scss */
 .todoApp-action .fa {
   font-size: 20px !important;
 }

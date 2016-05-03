@@ -4,18 +4,27 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 *{
 	font-family: 'Alegreya Sans', sans-serif;
+	font-size: 16px;
 }
 .todoApp {
 	width: 30%;
 	margin: 0 auto;
 	padding: 20px 10px;
 	position: relative;
+	margin-bottom: 50px;
 }
 .header{
 	font-weight: bold;
 	padding: 5px 0px;
 	border-bottom: 2px solid #000;
 	text-transform: uppercase;
+}
+.text-box{
+	&::before{
+		content: "";
+		display: block;
+		clear: both;
+	}
 }
 ul{
 	padding: 0;
@@ -35,9 +44,6 @@ ul{
 }
 .item-checkbox:checked + .item-content {
 	color: #ccc;
-}
-.add-input{
-	float: left;
 }
 .todoApp-form{
 	&::after{
