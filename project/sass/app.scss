@@ -1,0 +1,73 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+*{
+	font-family: 'Alegreya Sans', sans-serif;
+}
+.todoApp {
+	width: 30%;
+	margin: 0 auto;
+	padding: 20px 10px;
+	position: relative;
+}
+.header{
+	font-weight: bold;
+	padding: 5px 0px;
+	border-bottom: 2px solid #000;
+	text-transform: uppercase;
+}
+ul{
+	padding: 0;
+}
+.todoApp-item {
+	list-style: none;
+	> * {
+		margin-right: 10px;
+	}
+}
+.item-checkbox{
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  margin: 5px;
+}
+.item-checkbox:checked + .item-content {
+	color: #ccc;
+}
+.add-input{
+	float: left;
+}
+.todoApp-form{
+	&::after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+.item-content, .edit-input{
+	display: inline-block;
+	margin-left: 10px;
+}
+.iconBtn-group, .input-group{
+	display: inline-block;
+	width: 50%;
+	margin: 0;
+}
+.iconBtn-group{
+	text-align: right;
+}
+.input-group{
+	text-align: left;
+}
+.action-btn{
+	text-align: center;
+	display: inline-block;
+	width: 33.333%;
+}
+.todoApp-action{
+	.fa{
+		font-size: 20px !important;
+	}
+}

@@ -1,0 +1,103 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../sass/app.scss */
+* {
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+/* line 8, ../sass/app.scss */
+.todoApp {
+  width: 30%;
+  margin: 0 auto;
+  padding: 20px 10px;
+  position: relative;
+}
+
+/* line 14, ../sass/app.scss */
+.header {
+  font-weight: bold;
+  padding: 5px 0px;
+  border-bottom: 2px solid #000;
+  text-transform: uppercase;
+}
+
+/* line 20, ../sass/app.scss */
+ul {
+  padding: 0;
+}
+
+/* line 23, ../sass/app.scss */
+.todoApp-item {
+  list-style: none;
+}
+/* line 25, ../sass/app.scss */
+.todoApp-item > * {
+  margin-right: 10px;
+}
+
+/* line 29, ../sass/app.scss */
+.item-checkbox {
+  -ms-transform: scale(1.5);
+  /* IE */
+  -moz-transform: scale(1.5);
+  /* FF */
+  -webkit-transform: scale(1.5);
+  /* Safari and Chrome */
+  -o-transform: scale(1.5);
+  /* Opera */
+  margin: 5px;
+}
+
+/* line 36, ../sass/app.scss */
+.item-checkbox:checked + .item-content {
+  color: #ccc;
+}
+
+/* line 39, ../sass/app.scss */
+.add-input {
+  float: left;
+}
+
+/* line 43, ../sass/app.scss */
+.todoApp-form::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 49, ../sass/app.scss */
+.item-content, .edit-input {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* line 53, ../sass/app.scss */
+.iconBtn-group, .input-group {
+  display: inline-block;
+  width: 50%;
+  margin: 0;
+}
+
+/* line 58, ../sass/app.scss */
+.iconBtn-group {
+  text-align: right;
+}
+
+/* line 61, ../sass/app.scss */
+.input-group {
+  text-align: left;
+}
+
+/* line 64, ../sass/app.scss */
+.action-btn {
+  text-align: center;
+  display: inline-block;
+  width: 33.333%;
+}
+
+/* line 70, ../sass/app.scss */
+.todoApp-action .fa {
+  font-size: 20px !important;
+}
