@@ -2,22 +2,56 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@mixin breakpoint($point) {
+	@if $point == lg-pc{
+	    @media only screen and (min-width: 1201px){
+	      @content;
+	    }
+	}
+	@else if $point == pc{
+	    @media only screen and (min-width: 992px) and (max-width: 1200px){
+	      @content;
+	    }
+	}
+	@else if $point == lg-pad{
+	    @media only screen and (min-width: 769px) and (max-width: 991px){
+	      @content;
+	    }
+	}
+  	@else if $point == pad{
+	    @media only screen and (min-width: 501px) and (max-width: 768px){
+	      @content;
+	    }
+	}
+ 	@else if $point == mobile{
+	    @media only screen and (max-width: 500px){
+	      @content;
+	    }
+	}
+}
 *{
-	font-family: 'Alegreya Sans', sans-serif;
-	font-size: 16px;
+	font-family: 'Alegreya Sans',"Microsoft YaHei", sans-serif;
+	font-size: 1em;
 }
 .todoApp {
-	width: 30%;
+	width: 400px;
 	margin: 0 auto;
 	padding: 20px 10px;
-	position: relative;
 	margin-bottom: 50px;
+	@include breakpoint(mobile) {
+		width: 80%;
+	}
 }
 .header{
 	font-weight: bold;
 	padding: 5px 0px;
 	border-bottom: 2px solid #000;
 	text-transform: uppercase;
+}
+.title-input{
+	@include breakpoint(mobile) {
+		width: 100% !important;
+	}
 }
 .text-box{
 	&::before{
@@ -26,24 +60,20 @@
 		clear: both;
 	}
 }
-ul{
-	padding: 0;
-}
-.todoApp-item {
-	list-style: none;
-	> * {
-		margin-right: 10px;
+.add-input{
+	float: left;
+	margin-top:-15px;
+	@include breakpoint(mobile) {
+		width: 100% !important;
 	}
 }
-.item-checkbox{
-  -ms-transform: scale(1.5); /* IE */
-  -moz-transform: scale(1.5); /* FF */
-  -webkit-transform: scale(1.5); /* Safari and Chrome */
-  -o-transform: scale(1.5); /* Opera */
-  margin: 5px;
+.add-btn{
+	float:right;
+	position:relative;
+	top:10px;
 }
-.item-checkbox:checked + .item-content {
-	color: #ccc;
+ul{
+	padding: 0;
 }
 .todoApp-form{
 	&::after{
@@ -53,19 +83,64 @@ ul{
 	}
 }
 .item-content, .edit-input{
-	display: inline-block;
-	margin-left: 10px;
+	white-space:normal;
+	word-wrap:break-word;
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-left: 29.5px;
+	margin-top: 1.5px;
+	@include breakpoint(lg-pc) {
+		width: 80%;
+	}
+	@include breakpoint(pc) {
+		width: 78%;
+	}
+	@include breakpoint(lg-pad) {
+		width: 75%;
+	}
 }
-.iconBtn-group, .input-group{
-	display: inline-block;
-	width: 50%;
-	margin: 0;
+.todoApp-item {
+	list-style: none;
+	position: relative;
+}
+.item-checkbox{
+  position: absolute;
+  top: 19px;
+  left: 0px;
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+}
+.item-checkbox:checked + .item-content {
+	color: #ccc;
 }
 .iconBtn-group{
-	text-align: right;
+	display: block;
+	float: right;
+	@include breakpoint(lg-pc) {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	@include breakpoint(pc) {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	@include breakpoint(lg-pad) {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
 }
 .input-group{
-	text-align: left;
+	line-height: 48px;
+	float: left;
+}
+.clearfix{
+	clear: both;
 }
 .action-btn{
 	text-align: center;

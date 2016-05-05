@@ -2,22 +2,27 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 5, ../sass/app.scss */
+/* line 32, ../sass/app.scss */
 * {
-  font-family: 'Alegreya Sans', sans-serif;
-  font-size: 16px;
+  font-family: 'Alegreya Sans',"Microsoft YaHei", sans-serif;
+  font-size: 1em;
 }
 
-/* line 9, ../sass/app.scss */
+/* line 36, ../sass/app.scss */
 .todoApp {
-  width: 30%;
+  width: 400px;
   margin: 0 auto;
   padding: 20px 10px;
-  position: relative;
   margin-bottom: 50px;
 }
+@media only screen and (max-width: 500px) {
+  /* line 36, ../sass/app.scss */
+  .todoApp {
+    width: 80%;
+  }
+}
 
-/* line 16, ../sass/app.scss */
+/* line 45, ../sass/app.scss */
 .header {
   font-weight: bold;
   padding: 5px 0px;
@@ -25,29 +30,91 @@
   text-transform: uppercase;
 }
 
-/* line 23, ../sass/app.scss */
+@media only screen and (max-width: 500px) {
+  /* line 51, ../sass/app.scss */
+  .title-input {
+    width: 100% !important;
+  }
+}
+
+/* line 57, ../sass/app.scss */
 .text-box::before {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 29, ../sass/app.scss */
+/* line 63, ../sass/app.scss */
+.add-input {
+  float: left;
+  margin-top: -15px;
+}
+@media only screen and (max-width: 500px) {
+  /* line 63, ../sass/app.scss */
+  .add-input {
+    width: 100% !important;
+  }
+}
+
+/* line 70, ../sass/app.scss */
+.add-btn {
+  float: right;
+  position: relative;
+  top: 10px;
+}
+
+/* line 75, ../sass/app.scss */
 ul {
   padding: 0;
 }
 
-/* line 32, ../sass/app.scss */
-.todoApp-item {
-  list-style: none;
-}
-/* line 34, ../sass/app.scss */
-.todoApp-item > * {
-  margin-right: 10px;
+/* line 79, ../sass/app.scss */
+.todoApp-form::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
-/* line 38, ../sass/app.scss */
+/* line 85, ../sass/app.scss */
+.item-content, .edit-input {
+  white-space: normal;
+  word-wrap: break-word;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: 29.5px;
+  margin-top: 1.5px;
+}
+@media only screen and (min-width: 1201px) {
+  /* line 85, ../sass/app.scss */
+  .item-content, .edit-input {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* line 85, ../sass/app.scss */
+  .item-content, .edit-input {
+    width: 78%;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+  /* line 85, ../sass/app.scss */
+  .item-content, .edit-input {
+    width: 75%;
+  }
+}
+
+/* line 103, ../sass/app.scss */
+.todoApp-item {
+  list-style: none;
+  position: relative;
+}
+
+/* line 107, ../sass/app.scss */
 .item-checkbox {
+  position: absolute;
+  top: 19px;
+  left: 0px;
   -ms-transform: scale(1.5);
   /* IE */
   -moz-transform: scale(1.5);
@@ -56,52 +123,62 @@ ul {
   /* Safari and Chrome */
   -o-transform: scale(1.5);
   /* Opera */
-  margin: 5px;
 }
 
-/* line 45, ../sass/app.scss */
+/* line 116, ../sass/app.scss */
 .item-checkbox:checked + .item-content {
   color: #ccc;
 }
 
-/* line 49, ../sass/app.scss */
-.todoApp-form::after {
-  content: "";
+/* line 119, ../sass/app.scss */
+.iconBtn-group {
   display: block;
+  float: right;
+}
+@media only screen and (min-width: 1201px) {
+  /* line 119, ../sass/app.scss */
+  .iconBtn-group {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  /* line 119, ../sass/app.scss */
+  .iconBtn-group {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+  /* line 119, ../sass/app.scss */
+  .iconBtn-group {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+/* line 138, ../sass/app.scss */
+.input-group {
+  line-height: 48px;
+  float: left;
+}
+
+/* line 142, ../sass/app.scss */
+.clearfix {
   clear: both;
 }
 
-/* line 55, ../sass/app.scss */
-.item-content, .edit-input {
-  display: inline-block;
-  margin-left: 10px;
-}
-
-/* line 59, ../sass/app.scss */
-.iconBtn-group, .input-group {
-  display: inline-block;
-  width: 50%;
-  margin: 0;
-}
-
-/* line 64, ../sass/app.scss */
-.iconBtn-group {
-  text-align: right;
-}
-
-/* line 67, ../sass/app.scss */
-.input-group {
-  text-align: left;
-}
-
-/* line 70, ../sass/app.scss */
+/* line 145, ../sass/app.scss */
 .action-btn {
   text-align: center;
   display: inline-block;
   width: 33.333%;
 }
 
-/* line 76, ../sass/app.scss */
+/* line 151, ../sass/app.scss */
 .todoApp-action .fa {
   font-size: 20px !important;
 }
