@@ -112,11 +112,11 @@ const TodoCard = React.createClass({
 			    <CardText style={{position:"relative"}}>
 			    	 <p className="header" style={{fontSize: "1.3em"}}>{this.props.title}</p>
 					 <IconButton iconClassName="fa fa-trash-o" style={{position:"absolute",top:0,right:0}}
-					 tooltip="delete the card" touch={true} tooltipPosition="bottom-left" onClick={this.handleRemoveCard} onMouseOver={this.removeCardEvent} onMouseOut={this.resetCardEvent}/>
+					 tooltip="delete the card" touch={true} tooltipPosition="bottom-left" onClick={this.handleRemoveCard} onMouseOver={this.removeCardEvent} onMouseOut={this.resetCardEvent} onTouchStart={this.removeCardEvent} onTouchEnd={this.resetCardEvent}/>
 			    	<TodoHeader showTitle={false} undone={undoneCount} />
 			    </CardText>
 			</Card>
-	        <Dialog actions={actions} open={this.state.open} autoDetectWindowHeight={true} onRequestClose={this.handleClose} autoScrollBodyContent={true}>
+	        <Dialog actions={actions} open={this.state.open} autoDetectWindowHeight={true} onRequestClose={this.handleClose} autoScrollBodyContent={true} contentClassName="dialog-content">
 				<TodoHeader title={this.props.title} undone={undoneCount} cardIndex={this.props.cardIndex} showTitle={true} saveTitle={this.props.saveChange}/>
 				<InputField cardIndex={this.props.cardIndex} addSubmit={this.props.addSubmit} />
 				<TodoList data={this.props.data} cardIndex={this.props.cardIndex} change={this.props.saveChange} renderList={true}/>
@@ -190,7 +190,7 @@ const TodoCreate = React.createClass({  //新增todo卡
 		return (
 			<div>
 				<FlatButton label="Add a card..." labelStyle={{textTransform: "none",fontSize:20}} onTouchTap={this.handleOpen}/>
-		        <Dialog actions={actions} open={this.state.open}
+		        <Dialog actions={actions} open={this.state.open} contentClassName="dialog-content"
 		          autoDetectWindowHeight={true} onRequestClose={this.handleClose} autoScrollBodyContent={true}>
 					<TodoHeader cardIndex={null} undone={this.state.undone} showTitle={true} saveTitle={this.handleAddItem}  title={this.state.titleText}/>
 					<InputField cardIndex={cardIndex} addSubmit={this.handleAddItem} />
@@ -262,7 +262,7 @@ const InputField = React.createClass({
 	},
 	handleSubmit: function(e) {
 		e.preventDefault();
-		if(this.state.newItem!==""){
+		if(this.state.newItem.trim()!==""){
 			this.props.addSubmit(this.props.cardIndex,this.state.newItem);  //todoApp.handleItemSubmit();
 			this.setState({newItem:""});
 		}else{
@@ -369,7 +369,7 @@ const TodoItem = React.createClass({
 		var item,
 			editIcon = this.state.edit ? "fa fa-check": "fa fa-pencil", //edit icon之按鈕的類別
 			itemSpan = <span className="item-content" onClick={this.handleEditClick}>{this.state.text}</span>,
-			itemInput = <input className="edit-input" type="text" value={this.state.text} onBlur={this.state.blurEvent}
+			itemInput = <textarea className="edit-input" type="text" value={this.state.text} onBlur={this.state.blurEvent}
 						onChange={this.handleTextChange} onKeyDown={this.handleEditKeydown} autoFocus={true}/>,
 			style = {backgroundColor:"#000"};
 		item = this.state.edit ? itemInput: itemSpan;

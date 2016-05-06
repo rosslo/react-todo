@@ -42,6 +42,10 @@
 		width: 80%;
 	}
 }
+.dialog-content{
+	 width: 100% !important;
+	 max-width: 768px !important;
+}
 .header{
 	font-weight: bold;
 	padding: 5px 0px;
@@ -90,19 +94,12 @@ ul{
 	height: auto;
 	margin-left: 29.5px;
 	margin-top: 1.5px;
-	@include breakpoint(lg-pc) {
-		width: 80%;
-	}
-	@include breakpoint(pc) {
-		width: 78%;
-	}
-	@include breakpoint(lg-pad) {
-		width: 75%;
-	}
 }
 .todoApp-item {
+	width: 100%;
 	list-style: none;
 	position: relative;
+	line-height: 48px;
 }
 .item-checkbox{
   position: absolute;
@@ -117,27 +114,37 @@ ul{
 	color: #ccc;
 }
 .iconBtn-group{
-	display: block;
-	float: right;
-	@include breakpoint(lg-pc) {
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
-	@include breakpoint(pc) {
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
-	@include breakpoint(lg-pad) {
-		position: absolute;
-		top: 0;
-		right: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	button{
+		@include breakpoint(pad) {
+			width: 30px !important;
+			height: 30px !important;
+		}
+		@include breakpoint(mobile) {
+			width: 24px !important;
+			height: 24px !important;
+		}
 	}
 }
 .input-group{
-	line-height: 48px;
+	display: block;
 	float: left;
+	width: 100%;
+}
+.edit-input{  //textarea
+	resize: none;
+	min-height: 1.1em;
+	width: 70%;
+	border : 0;
+	overflow-y : auto;
+}
+.item-content{
+	max-width: 80%;
+	@include breakpoint(mobile) {
+		max-width: 70%;
+	}
 }
 .clearfix{
 	clear: both;
