@@ -11,7 +11,6 @@ import FlatButton from 'material-ui/lib/flat-button';
 import Card from 'material-ui/lib/card/card';
 import CardActions from 'material-ui/lib/card/card-actions';
 import CardText from 'material-ui/lib/card/card-text';
-//var itemsData = [{"thing":"Studying","done":false},{"thing":"Sleeping","done":true},{"thing":"拯救世界","done":false}];
 var itemsData;
 const TodoApp = React.createClass({
 	getInitialState: function() {
@@ -72,7 +71,7 @@ const TodoApp = React.createClass({
 					}.bind(this));
 		return (
 			<div className="todoApp">
-					<h1>My To-Do List</h1>
+					<h1>My To-Do Board</h1>
 					{cards}
 					<TodoCreate cardIndex={this.state.data.length} addSubmit={this.handleItemSubmit} />
 			</div>
@@ -273,7 +272,7 @@ const InputField = React.createClass({
 	render: function() {
 		return (
 			<form className="todoApp-form" onSubmit={this.handleSubmit}>
-				<p className="header">Add</p>
+				<p className="header">Add&nbsp;&nbsp;task</p>
 				<TextField className="add-input" ref="addInput" hintText="say something..." floatingLabelText="Add a to-do item" errorText={this.state.errorText} value={this.state.newItem} onChange={this.handleChange} onBlur={this.handleErrorBlur}/>
 				<span className="add-btn">
 					<RaisedButton style={{top:50}} label="Add" type="submit" className="submit-btn"/>
@@ -300,11 +299,11 @@ const TodoList = React.createClass({
 		}
 		return (
 			<div className="todoApp-list">
-				<p className="header">todo</p>
+				<p className="header">todo&nbsp;&nbsp;list</p>
 				<ul className="undone-list">
 					{undone}
 				</ul>
-				<p className="header">done</p>
+				<p className="header">completed</p>
 				<ul className="done-list">
 					{done}
 				</ul>
